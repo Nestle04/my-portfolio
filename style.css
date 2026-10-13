@@ -1,0 +1,497 @@
+@font-face {
+    font-family: 'Galgo';
+    src: url('Galgo.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Grotesk';
+    src: url('FamiljenGrotesk-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Galgo', sans-serif;
+    background: #000000;
+    padding: 10px;
+}
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.hero2 {
+    position: relative;
+    width: 100%;
+
+    overflow: hidden;
+}
+
+.hero-title {
+    font-size: 80px;
+    transition: text-shadow 0.4s ease, color 0.4s ease;
+}
+
+
+.hero-title:hover {
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(235, 166, 47, 0.9),
+        0 0 20px rgba(238, 181, 57, 0.7),
+        0 0 30px rgba(234, 131, 47, 0.5);
+}
+
+/* Видео как фон */
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    filter: brightness(0.6);
+}
+
+
+/* Контент поверх */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: #fde384;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+    justify-content: space-between;
+}
+
+.upper-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: rgba(170, 170, 170, 0.2);
+    backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    z-index: 4;
+    color: #fff;
+}
+
+.nav-icon-1 {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    transition: .1s;
+    margin: 10px 10px;
+    cursor: pointer;
+    display: inline-block;
+    z-index: 2;
+}
+
+.contact-icon {
+    height: 30px;
+    padding-right: 80px;
+    right: 100px;
+    top: 15px
+}
+
+.nav-icon-1 span {
+    width: 5px;
+    height: 5px;
+    background-color: #a8a8a8;
+    display: block;
+    border-radius: 50%;
+    position: absolute;
+
+}
+
+.nav-icon-1:hover span {
+    transform: scale(1.2);
+    transition: 350ms cubic-bezier(.8, .5, .2, 1.4);
+}
+
+.nav-icon-1 span:nth-child(1) {
+    left: 0;
+    top: 0;
+}
+
+.nav-icon-1 span:nth-child(2) {
+    left: 12px;
+    top: 0;
+}
+
+.nav-icon-1 span:nth-child(3) {
+    right: 0;
+    top: 0;
+}
+
+.nav-icon-1 span:nth-child(4) {
+    left: 0;
+    top: 12px;
+}
+
+.nav-icon-1 span:nth-child(5) {
+    position: absolute;
+    left: 12px;
+    top: 12px;
+}
+
+.nav-icon-1 span:nth-child(6) {
+    right: 0px;
+    top: 12px;
+}
+
+.nav-icon-1 span:nth-child(7) {
+    left: 0px;
+    bottom: 0px;
+}
+
+.nav-icon-1 span:nth-child(8) {
+    position: absolute;
+    left: 12px;
+    bottom: 0px;
+}
+
+.nav-icon-1 span:nth-child(9) {
+    right: 0px;
+    bottom: 0px;
+}
+
+.nav-icon-1.open {
+    transform: rotate(180deg);
+    cursor: pointer;
+    transition: .2s cubic-bezier(.8, .5, .2, 1.4);
+}
+
+.nav-icon-1.open span {
+    border-radius: 50%;
+    transition-delay: 200ms;
+    transition: .5s cubic-bezier(.8, .5, .2, 1.4);
+}
+
+.nav-icon-1.open span:nth-child(2) {
+    left: 6px;
+    top: 6px;
+}
+
+.nav-icon-1.open span:nth-child(4) {
+    left: 6px;
+    top: 18px;
+}
+
+.nav-icon-1.open span:nth-child(6) {
+    right: 6px;
+    top: 6px;
+}
+
+.nav-icon-1.open span:nth-child(8) {
+    left: 18px;
+    bottom: 6px;
+}
+
+/* Кнопки */
+.buttons {
+    margin-top: 30px;
+    padding-bottom: 100p;
+    font-size: 40px;
+    padding-bottom: 150px;
+    color: #f5d9b0;
+}
+
+.contact-bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 0px;
+    width: 0px;
+    position: absolute;
+    background-color: #6d6d6d5f;
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    top: 60px;
+    right: 120px;
+    z-index: 1;
+    transition: 0.4s ease;
+    align-items: center;
+    gap: 5px;
+}
+
+.contact-bar img {
+    width: 100%
+}
+
+.contact-bar.open {
+    height: 100px;
+    width: 25px;
+}
+
+/* Боковая панель */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -260px;
+    /* спрятана */
+    width: 260px;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(10px);
+    padding-top: 120px;
+    transition: 0.4s ease;
+    z-index: 3;
+}
+
+.sidebar.open {
+    left: 0;
+    /* выезжает */
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li {
+    margin: 20px 0;
+}
+
+.sidebar ul li a {
+    color: #fff;
+    font-size: 1.4rem;
+    text-decoration: none;
+    padding: 10px 30px;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar ul li a:hover {
+    background: rgba(255, 255, 255, 0.15);
+    padding-left: 40px;
+}
+
+.my-image {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    background-color: #4e3c28;
+    padding: 10px;
+
+}
+
+.my-image img {
+    height: 400px;
+}
+
+
+.my-image .about-me {
+    font-family: 'Grotesk';
+    color: #b5b3b3;
+    padding: 15px;
+    font-size: 23px;
+}
+
+.experience {
+    color: #d5d5d5;
+    font-family: 'Grotesk';
+    display: flex;
+    flex-direction: column;
+    padding: 10px 100px;
+    font-size: 23px;
+    gap: 10px;
+}
+
+.experience section {
+    background-color: #252525;
+    padding: 10px;
+    color: #b5b3b3;
+    border-radius: 10px;
+
+    /* Элементы плавности анимации (время и тип изменения) */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+    transform-origin: center;
+    /* Увеличение будет идти от центра элемента */
+}
+
+/* Стили, которые применяются при наведении мыши (hover) */
+.experience section:hover {
+    transform: scale(1.01);
+    /* Плавно увеличивает секцию на 5% в ширину и высоту */
+    color: #ffffff;
+    /* Текст внутри становится ярче */
+
+    /* Эффект свечения (горизонтальное смещение, вертикальное, размытие, цвет) */
+    box-shadow: 0 0 20px rgba(213, 213, 213, 0.4);
+}
+
+.languages {
+    color: #b5b3b3;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Grotesk';
+    font-size: 23px;
+    padding: 10px 100px 10px 100px;
+}
+
+.diplom {
+    padding-left: 100px;
+}
+
+.diplomas {
+    display: flex;
+    flex-wrap: wrap;
+    /* вот это включает перенос */
+    gap: 20px;
+    /* расстояние между фото */
+    justify-content: center;
+    /* выравнивание */
+
+    width: 90%;
+    justify-content: center;
+
+}
+
+.diplomas-title {
+    color: #b5b3b3;
+    font-family: 'Grotesk';
+    font-size: 40px;
+}
+
+.diplomas img {
+    width: 48%;
+    /* задаёшь размер фото */
+
+    border-radius: 10px;
+}
+
+.diplomas img:hover {
+    box-shadow: 0 0 25px rgba(241, 199, 136, 0.8);
+    transform: scale(1.02);
+    transition: 0.5s ease;
+
+}
+
+
+.dropdown {
+
+    gap: 20px;
+    font-size: 23px;
+    font-family: 'Grotesk';
+    padding: 10px 100px 10px 100px;
+
+}
+
+/* Кнопка */
+.dropdown-btn {
+    width: 15%;
+    padding: 12px;
+    background: #333;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 23px;
+}
+
+/* Меню — обычный блок */
+.dropdown-menu {
+    background: #444;
+    border-radius: 6px;
+    overflow: hidden;
+    max-height: 0;
+    /* скрыто */
+    transition: max-height 0.3s ease;
+}
+
+/* Активное меню */
+.dropdown-menu.active {
+    max-height: 500px;
+    /* достаточно большая высота */
+}
+
+/* Пункты */
+.dropdown-item {
+    padding: 12px;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.dropdown-item:hover {
+    background: #555;
+}
+
+.grid {
+    display: grid;
+    /* Автоматически создаем колонки одинакового размера (минимум 300px) */
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    /* Одинаковое расстояние между ячейками */
+    gap: 20px;
+    /* Растягиваем сетку на весь экран */
+    width: 100%;
+
+    /* Внутренний отступ, чтобы видео не прижимались к краям экрана */
+    padding: 20px;
+
+    box-sizing: border-box;
+    background-color: #000000;
+    /* Темный фон для красоты (опционально) */
+    align-items: center;
+}
+
+.grid video {
+
+    /* Видео уменьшится, чтобы влезть целиком, не искажая пропорции */
+    object-fit: contain;
+    /* Центрирует видео внутри его собственной ячейки */
+    justify-self: center;
+    align-self: center;
+
+}
+
+.grid video :hover {
+    box-shadow: 0 0 25px rgba(241, 199, 136, 0.8);
+    transform: scale(1.02);
+    transition: 0.5s ease;
+}
+
+.hero-video2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 48.5%;
+    object-fit: cover;
+    z-index: -0;
+    filter: brightness(0.6);
+    min-height: 445px;
+    max-height: 450px;
+}
+
+.divider {
+    height: 5px;
+    border-radius: 10px;
+    background-color: rgb(231, 218, 124);
+    margin-top: 250px;
+}
+
+.animation-description{
+    height: 42vh;
+    background-color: #191919;
+    border-radius: 20px;
+    color: #b8b8b8;
+    font-family: 'Grotesk';
+    font-size: 30px;
+    padding: 30px;
+    align-items: center;
+}
+
