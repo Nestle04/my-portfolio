@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animations</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="hero2">
+
+
+        <!-- Бургер -->
+        <div class="upper-menu">
+            <div class="icon nav-icon-1">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div>
+                <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" viewBox="0 0 24 24">
+                    <title>baseline-phone</title>
+                    <path fill="currentColor" d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24c1.12.37 2.33.57 3.57.57c.55 0 1 .45 1 1V20c0 .55-.45 1-1 1c-9.39 0-17-7.61-17-17c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1c0 1.25.2 2.45.57 3.57c.11.35.03.74-.25 1.02z" />
+                </svg>
+                <div class="contact-bar">
+                    <a href="https://www.instagram.com/nestle1._?utm_source=qr&stkn=MWVmbjVmZHRwcTJueg=="><img src="media/Instagram_logo_2022.png" alt="Контакты"></a>
+                    <a href="https://t.me/nastasia1029"><img src="media/android-chrome-192x192 (1).png" alt="Контакты"></a>
+                    <a href="https://www.tiktok.com/@e1tsen"><img src="media/Tiktok_icon.svg.png" alt="Контакты"></a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Выезжающая панель -->
+        <nav class="sidebar" id="sidebar">
+            <ul>
+                <li><a href="index.html">Main</a></li>
+      <li><a href="page-animation.html">Animation</a></li>
+      <li><a href="page-architecture.html">Architeture</a></li>
+      <li><a href="page-characters.html">Characters</a></li>
+      <li><a href="page-art.html">Art and Products</a></li>
+            </ul>
+        </nav>
+
+
+
+        <div class="hero-content">
+            <div class="hero-title">ARCHITECTURE</div>
+        </div>
+
+
+    </header>
+    <div class="divider"></div>
+    <video class="hero-video2" autoplay muted playsinline loop>
+        <source src="media/lv_0_20261021230217.mp4" type="video/webm">
+    </video>
+    <div class="grid-image">
+
+        <img src="media/architecture/-1.jpg" alt="">
+        <img src="media/architecture/-2.jpg" alt="">
+        <img src="media/architecture/-3.jpg" alt="">
+
+        <img src="media/architecture/-picsart-23-12-16-22-23-38-052.jpg" alt="">
+        <img src="media/architecture/-.jpg" alt="">
+        <img src="media/architecture/-bath.jpg" alt="">
+
+        <img src="media/architecture/-kitchen-main.jpg" alt="">
+
+
+        <img src="media/architecture/-main-room (1).jpg" alt="">
+        <img src="media/architecture/-main-room.jpg" alt="">
+        <img src="media/architecture/-microsoftteams-image.jpg" alt="">
+
+        <img src="media/architecture/-34382fe9-edaf-41d2-8eac-e9698dbb5f44.jpg" alt="">
+        <img src="media/architecture/unnamed.png" alt="">
+        <img src="media/architecture/-room.jpg" alt="">
+
+        <img src="media/architecture/unnamed (1).jpg" alt="">
+        <img src="media/architecture/unnamed (10).jpg" alt="">
+        <img src="media/architecture/unnamed (11).jpg" alt="">
+
+
+        <img src="media/architecture/unnamed (12).jpg" alt="">
+        <img src="media/architecture/unnamed (13).jpg" alt="">
+
+
+        <img src="media/architecture/unnamed (2).png" alt="">
+        <img src="media/architecture/unnamed (3).jpg" alt="">
+        <img src="media/architecture/unnamed (7).jpg" alt="">
+
+        <img src="media/architecture/unnamed (5).jpg" alt="">
+        <img src="media/architecture/unnamed (6).jpg" alt="">
+        <img src="media/architecture/unnamed (4).jpg" alt="">
+
+        <img src="media/architecture/unnamed (8).jpg" alt="">
+        <img src="media/architecture/unnamed (9).jpg" alt="">
+        <img src="media/architecture/unnamed.jpg" alt="">
+
+
+    </div>
+
+</body>
+<script>
+
+    const icon = document.querySelector('.nav-icon-1');
+    const sidebar = document.getElementById('sidebar');
+    const contactIcon = document.querySelector('.contact-icon');
+    const contactBar = document.querySelector('.contact-bar');
+
+    icon.addEventListener('click', () => {
+        sidebar.classList.toggle("open");
+    });
+
+    const icons = document.querySelectorAll('.icon');
+    icons.forEach(icon => {
+        icon.addEventListener('click', (event) => {
+            icon.classList.toggle("open");
+        });
+    });
+    contactIcon.addEventListener('click', (event) => {
+        contactBar.classList.toggle("open");
+    })
+
+
+    const btn = document.querySelector('.dropdown-btn');
+    const menu = document.querySelector('.dropdown-menu');
+
+    btn.addEventListener('click', () => {
+        if (menu.classList.contains('active')) {
+            menu.style.maxHeight = 0;
+            menu.classList.remove('active');
+        } else {
+            menu.style.maxHeight = menu.scrollHeight + "px";
+            menu.classList.add('active');
+        }
+    });
+
+</script>
+
+</html>
