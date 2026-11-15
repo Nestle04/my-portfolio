@@ -22,14 +22,13 @@ body {
     position: relative;
     width: 100%;
     height: 100vh;
-    overflow: hidden;
 }
 
 .hero2 {
     position: relative;
     width: 100%;
 
-    overflow: hidden;
+
 }
 
 .hero-title {
@@ -51,8 +50,6 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
     z-index: 1;
     filter: brightness(0.6);
 }
@@ -433,29 +430,24 @@ body {
 
 .grid {
     display: grid;
-    /* Автоматически создаем колонки одинакового размера (минимум 300px) */
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    /* Одинаковое расстояние между ячейками */
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-    /* Растягиваем сетку на весь экран */
     width: 100%;
-
-    /* Внутренний отступ, чтобы видео не прижимались к краям экрана */
     padding: 20px;
-
     box-sizing: border-box;
     background-color: #000000;
-    /* Темный фон для красоты (опционально) */
     align-items: center;
+    grid-auto-rows: 1fr;
 }
-.grid-image{
+
+.grid-image {
     display: grid;
     /* Автоматически создаем колонки одинакового размера (минимум 300px) */
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     /* Одинаковое расстояние между ячейками */
     gap: 20px;
     /* Растягиваем сетку на весь экран */
-    width: 100%;
+
 
     /* Внутренний отступ, чтобы видео не прижимались к краям экрана */
     padding: 20px;
@@ -464,13 +456,13 @@ body {
     background-color: #000000;
     /* Темный фон для красоты (опционально) */
     align-items: center;
-   
+
 }
 
 .grid video {
 
+    width: 25vw;
     /* Видео уменьшится, чтобы влезть целиком, не искажая пропорции */
-    object-fit: contain;
     /* Центрирует видео внутри его собственной ячейки */
     justify-self: center;
     align-self: center;
@@ -482,11 +474,25 @@ body {
     transform: scale(1.02);
     transition: 0.5s ease;
 }
-.grid-image img{ 
+
+.grid-image img {
     width: 30vw;
+
 }
 
 .hero-video2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 48.5%;
+    object-fit: cover;
+    z-index: -0;
+    filter: brightness(0.6);
+    min-height: 445px;
+    max-height: 450px;
+}
+.hero-video3 {
     position: absolute;
     top: 0;
     left: 0;
@@ -505,8 +511,13 @@ body {
     background-color: rgb(231, 218, 124);
     margin-top: 250px;
 }
-
-.animation-description{
+.divider3 {
+    height: 5px;
+    border-radius: 10px;
+    background-color: rgb(231, 218, 124);
+    margin-top: 250px;
+}
+.animation-description {
     height: 42vh;
     background-color: #191919;
     border-radius: 20px;
@@ -517,3 +528,263 @@ body {
     align-items: center;
 }
 
+@media (max-width: 1024px) {
+    .grid-image {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .grid-image img {
+        width: 45vw;
+        display: block;
+        margin: 0 auto;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .grid video {
+        width: 45vw;
+        display: block;
+        margin: 0 auto;
+        max-width: 100%;
+        height: auto;
+    }
+
+
+}
+
+
+
+/* Телефоны */
+@media (max-width: 600px) {
+
+    .grid-image {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .grid-image img {
+        width: 80vw;
+        display: block;
+        margin: 0 auto;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .grid {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 15px;
+    }
+
+    .grid video {
+        width: 80vw;
+        display: block;
+        margin: 0 auto;
+        max-width: 100%;
+        height: auto;
+    }
+
+
+}
+@media (max-width: 768px) {
+    
+
+    /* Общие настройки */
+    body {
+        padding: 0;
+        overflow-x: hidden;
+    }
+
+    /* Верхняя панель */
+    .upper-menu {
+        padding: 0 15px;
+        box-sizing: border-box;
+        height: 55px;
+    }
+
+    .contact-icon {
+        padding-right: 15px;
+        right: 0;
+    }
+
+    /* Hero */
+    .hero {
+        min-height: 35vh;
+        height: auto;
+    }
+
+    .hero-video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .hero-content {
+        margin-top: 70px;
+        padding: 20px;
+        justify-content: center;
+        gap: 150px;
+   
+    }
+
+    .hero-title {
+        font-size: clamp(32px, 8vw, 50px);
+        line-height: 1.1;
+        word-break: break-word;
+    }
+
+    .buttons {
+        font-size: clamp(18px, 4vw, 30px);
+        padding-bottom: 30px;
+    }
+
+    /* Боковое меню */
+    .sidebar {
+        width: 220px;
+        left: -220px;
+    }
+
+    /* Фото и описание */
+    .my-image {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .my-image img {
+        width: 90%;
+        max-width: 350px;
+        height: auto;
+    }
+
+    .my-image .about-me {
+        font-size: 18px;
+        padding: 10px;
+    }
+
+    /* Experience */
+    .experience {
+        padding: 20px;
+        font-size: 18px;
+    }
+
+    .experience h2 {
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .experience section {
+        font-size: 16px;
+    }
+
+    /* Languages */
+    .languages {
+        padding: 20px;
+        font-size: 18px;
+    }
+
+    .languages h2 {
+        font-size: 30px;
+        text-align: center;
+    }
+
+    /* Diplomas */
+    .diplom {
+        padding: 20px;
+    }
+
+    .diplomas-title {
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .diplomas {
+        width: 100%;
+        gap: 15px;
+    }
+
+    .diplomas img {
+        width: 100%;
+    }
+
+    /* Dropdown */
+    .dropdown {
+        padding: 20px;
+    }
+
+    .dropdown-btn {
+        width: 100%;
+        font-size: 18px;
+    }
+
+    /* Галерея изображений */
+    .grid-image {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .grid-image img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    /* Видео */
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .grid video {
+        width: 100%;
+        height: auto;
+    }
+
+    /* Вторая шапка */
+    .hero-video2 {
+        min-height: auto;
+        max-height: none;
+        height: 200px;
+        object-fit: cover;
+        margin-top: 50px;
+    }
+    .hero-video3 {
+        min-height: auto;
+        max-height: none;
+        height: 160px;
+        object-fit: cover;
+        margin-top: 75px;
+    }
+    .divider {
+        margin-top: 105px;
+    }
+    .divider3 {
+        margin-top: 95px;
+    }
+    .animation-description {
+        height: auto;
+        min-height: 250px;
+        font-size: 18px;
+        padding: 20px;
+    }
+
+    /* Контакты */
+    .contact-bar {
+        right: 15px;
+    }
+
+    .contact-bar.open {
+        width: 35px;
+        height: 120px;
+    }
+}
